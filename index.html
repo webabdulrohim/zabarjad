@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zabarjad Digital Solution | Jasa Dokumen & Legalitas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .hidden { display: none !important; }
+        .testi-card { transition: all 0.3s ease; }
+        .testi-card:hover { transform: translateY(-10px); }
+        canvas { max-height: 200px !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <div id="landing-page">
+        <a href="https://wa.me/6285793585403" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl z-50 hover:scale-110 transition">
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+
+        <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-slate-100">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <h1 class="text-xl font-black text-indigo-900 uppercase">Zabarjad <span class="text-indigo-500 font-medium text-[10px] block leading-none">Digital Solution</span></h1>
+                <div class="flex gap-4">
+                    <button onclick="navigasi('login-page')" class="text-slate-400 hover:text-indigo-600 text-[10px] font-bold uppercase tracking-widest">Admin</button>
+                    <a href="#form-section" class="bg-indigo-600 text-white px-5 py-2 rounded-xl text-xs font-bold shadow-lg shadow-indigo-200">DAFTAR SEKARANG</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-gradient text-white py-20 px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 uppercase tracking-tighter leading-tight">Solusi Legalitas & Administrasi</h2>
+            <p class="text-slate-400 mb-10 max-w-lg mx-auto text-sm italic">Proses Cepat & Terpercaya. Melayani Seluruh Indonesia.</p>
+            <div class="inline-block bg-emerald-500 text-white px-6 py-2 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-lg">
+                💸 Bayar Setelah Dokumen Jadi
+            </div>
+        </section>
+
+        <section class="py-12 container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                <i class="fas fa-credit-card text-indigo-600 text-xl mb-4"></i>
+                <h4 class="font-bold text-xs mb-3 uppercase tracking-wider">Pajak & Identitas</h4>
+                <ul class="text-[10px] text-slate-500 space-y-1">
+                    <li>• NPWP Pribadi & Badan</li>
+                    <li>• EFIN & Aktivasi NE</li>
+                    <li>• Cetak Ulang NPWP Hilang</li>
+                    <li>• Laporan SPT Tahunan</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                <i class="fas fa-file-signature text-emerald-600 text-xl mb-4"></i>
+                <h4 class="font-bold text-xs mb-3 uppercase tracking-wider">Legalitas Usaha</h4>
+                <ul class="text-[10px] text-slate-500 space-y-1">
+                    <li>• NIB (Nomor Induk Berusaha)</li>
+                    <li>• Sertifikasi Halal</li>
+                    <li>• P - IRT</li>
+                    <li>• PKP Perusahaan</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                <i class="fas fa-city text-blue-600 text-xl mb-4"></i>
+                <h4 class="font-bold text-xs mb-3 uppercase tracking-wider">Pendirian Badan</h4>
+                <ul class="text-[10px] text-slate-500 space-y-1">
+                    <li>• PT Perorangan & Perseroan</li>
+                    <li>• CV (Commanditaire)</li>
+                    <li>• Yayasan & Firma</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                <i class="fas fa-syringe text-rose-600 text-xl mb-4"></i>
+                <h4 class="font-bold text-xs mb-3 uppercase tracking-wider">Layanan Umum</h4>
+                <ul class="text-[10px] text-slate-500 space-y-1">
+                    <li>• Vaksin 1, 2, 3, 4 (Booster)</li>
+                    <li>• CV Lamaran Kerja</li>
+                    <li>• Konsultasi Umum</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-2xl font-black uppercase tracking-tighter">Kepuasan Klien</h3>
+                    <p class="text-slate-400 text-xs mt-2 italic">Ulasan terbaru dari mereka yang telah menggunakan jasa kami</p>
+                </div>
+                <div id="testi-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    </div>
+            </div>
+        </section>
+
+        <section id="form-section" class="py-16 bg-slate-100">
+            <div class="container mx-auto px-6 max-w-2xl">
+                <div class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-200">
+                    <div class="bg-slate-900 p-8 text-white text-center">
+                        <h3 class="text-xl font-bold uppercase tracking-widest">Formulir Pendaftaran</h3>
+                        <p class="text-slate-400 text-[10px] mt-1 italic tracking-widest">Silakan Lengkapi Data Di Bawah Ini</p>
+                    </div>
+                    
+                    <form class="p-8 space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-[10px] font-bold text-slate-400 uppercase ml-1">Nama Lengkap</label>
+                                <input type="text" id="reg-nama" placeholder="Sesuai KTP" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-bold text-slate-400 uppercase ml-1">No. WhatsApp</label>
+                                <input type="tel" id="reg-wa" placeholder="08xxxxxxxx" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-[10px] font-bold text-slate-400 uppercase ml-1">NIK (KTP)</label>
+                                <input type="number" id="reg-nik" placeholder="16 Digit NIK" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-bold text-slate-400 uppercase ml-1">Nomor KK</label>
+                                <input type="number" id="reg-kk" placeholder="16 Digit No. KK" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-[10px] font-bold text-slate-400 uppercase ml-1">Jenis Layanan</label>
+                            <select id="reg-layanan" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm cursor-pointer">
+                                <option value="">-- Pilih Layanan --</option>
+                                <optgroup label="PERPAJAKAN">
+                                    <option value="NPWP PRIBADI & BADAN">💳 NPWP PRIBADI & BADAN</option>
+                                    <option value="EFIN & AKTIVASI NPWP NE">💳 EFIN & AKTIVASI NPWP NE</option>
+                                    <option value="CETAK ULANG NPWP">💳 CETAK ULANG NPWP HILANG</option>
+                                    <option value="LAPORAN SPT TAHUNAN">💳 LAPORAN SPT TAHUNAN</option>
+                                </optgroup>
+                                <optgroup label="LEGALITAS USAHA">
+                                    <option value="NIB (OSS)">📑 NIB (NOMOR INDUK BERUSAHA)</option>
+                                    <option value="SERTIFIKASI HALAL">📑 SERTIFIKASI HALAL</option>
+                                    <option value="P-IRT">📑 P-IRT</option>
+                                    <option value="PKP PERUSAHAAN">📑 PKP PERUSAHAAN</option>
+                                </optgroup>
+                                <optgroup label="PENDIRIAN BADAN">
+                                    <option value="PT PERORANGAN">🏙 PT PERORANGAN</option>
+                                    <option value="PT PERSEROAN">🏙 PT PERSEROAN</option>
+                                    <option value="CV (COMMANDITAIRE)">🏙 CV (COMMANDITAIRE VENOOTSCHAP)</option>
+                                    <option value="YAYASAN">🏙 YAYASAN</option>
+                                    <option value="FIRMA">🏙 FIRMA</option>
+                                </optgroup>
+                                <optgroup label="LAINNYA">
+                                    <option value="CV LAMARAN">📋 CV "UNTUK LAMAR KERJA"</option>
+                                    <option value="VAKSIN 1-4">💉 VAKSIN 1,2,3,4 & BOOSTER</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="text-[10px] font-bold text-slate-400 uppercase ml-1">Alamat Lengkap</label>
+                            <textarea id="reg-alamat" rows="2" placeholder="Alamat lengkap sesuai domisili..." class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></textarea>
+                        </div>
+
+                        <div class="bg-indigo-50 p-4 rounded-2xl border-l-4 border-indigo-500">
+                            <p class="text-[10px] text-indigo-700 leading-relaxed font-bold uppercase">Instruksi Penting:</p>
+                            <p class="text-[10px] text-indigo-600 italic">Data Anda akan terkirim ke sistem kami. Mohon kirim foto KTP & KK secara manual via WhatsApp setelah menekan tombol di bawah.</p>
+                        </div>
+                        
+                        <button type="button" onclick="kirimWhatsApp()" class="w-full bg-green-600 text-white font-black py-4 rounded-2xl shadow-lg hover:bg-green-700 transition active:scale-95 uppercase tracking-widest text-xs">
+                            KIRIM DATA KE WHATSAPP
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-10 text-center text-slate-400 text-[10px] uppercase font-bold tracking-widest bg-white border-t">
+            &copy; 2026 Zabarjad Digital Solution
+        </footer>
+    </div>
+
+    <div id="login-page" class="hidden min-h-screen flex items-center justify-center bg-slate-900 p-6">
+        <div class="w-full max-w-sm text-center">
+            <h2 class="text-2xl font-black text-white mb-8 italic tracking-tighter uppercase">Admin Panel Access</h2>
+            <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 backdrop-blur-md space-y-4">
+                <input type="text" id="user" placeholder="Username" class="w-full p-4 bg-white/10 border border-white/10 rounded-2xl text-white outline-none">
+                <input type="password" id="pass" placeholder="Password" class="w-full p-4 bg-white/10 border border-white/10 rounded-2xl text-white outline-none">
+                <button onclick="prosesLogin()" class="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold shadow-lg shadow-indigo-500/30">LOG IN</button>
+                <button onclick="navigasi('landing-page')" class="text-slate-500 text-[10px] font-bold uppercase mt-4">Batal</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-page" class="hidden min-h-screen bg-slate-50 flex flex-col md:flex-row">
+        <aside class="w-full md:w-64 bg-slate-900 text-white p-8">
+            <h3 class="text-xl font-black mb-10 text-indigo-400 uppercase italic">Zabarjad Admin</h3>
+            <nav class="space-y-4 text-[10px] font-bold uppercase tracking-widest">
+                <button onclick="switchAdminTab('finance')" id="btn-fin" class="w-full p-3 bg-indigo-600 rounded-xl text-left flex items-center"><i class="fas fa-wallet mr-3"></i> Keuangan</button>
+                <button onclick="switchAdminTab('testi')" id="btn-tes" class="w-full p-3 text-slate-400 rounded-xl text-left flex items-center"><i class="fas fa-comment mr-3"></i> Testimoni</button>
+                <button onclick="logoutAdmin()" class="w-full mt-20 p-3 bg-red-500/10 text-red-400 rounded-xl text-left"><i class="fas fa-sign-out-alt mr-3"></i> Logout</button>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-6 md:p-10 space-y-8 overflow-y-auto">
+            <div id="tab-finance" class="space-y-8">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-black text-slate-800">RINGKASAN KAS</h2>
+                    <div class="text-[10px] bg-white px-4 py-2 rounded-full border border-slate-200 font-bold text-slate-400 uppercase tracking-widest">Update 2026</div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-slate-200">
+                        <h4 class="text-[10px] font-black text-slate-400 mb-4 uppercase">Input Pemasukan</h4>
+                        <input type="text" id="adm-klien" placeholder="Nama Klien" class="w-full p-3 bg-slate-50 border rounded-xl text-xs mb-3 outline-none">
+                        <input type="number" id="adm-nominal" placeholder="Nominal" class="w-full p-3 bg-slate-50 border rounded-xl text-xs mb-3 outline-none">
+                        <button onclick="tambahPemasukan()" class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold text-[10px]">SIMPAN DATA</button>
+                    </div>
+                    <div class="lg:col-span-2 bg-white p-6 rounded-[2rem] shadow-sm border border-slate-200">
+                        <h4 class="text-[10px] font-black text-slate-400 mb-4 uppercase">Tren Pemasukan Mingguan</h4>
+                        <canvas id="chartKeuangan"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2.5rem] border border-slate-100 overflow-hidden shadow-sm">
+                    <div class="p-6 border-b border-slate-50 flex justify-between bg-slate-50/50">
+                        <h4 class="text-[10px] font-black text-slate-800 uppercase tracking-widest">Riwayat Kas</h4>
+                        <div class="text-indigo-600 font-black text-xs uppercase">Total: Rp <span id="total-val">0</span></div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-[11px]">
+                            <thead class="bg-slate-50 text-slate-400 font-bold uppercase">
+                                <tr>
+                                    <th class="p-4">Tanggal</th>
+                                    <th class="p-4">Nama Klien</th>
+                                    <th class="p-4">Nominal</th>
+                                    <th class="p-4 text-right">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabel-admin" class="divide-y divide-slate-100 font-medium text-slate-600"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-testi" class="hidden space-y-8">
+                <h2 class="text-2xl font-black text-slate-800">KELOLA TESTIMONI</h2>
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-200 max-w-xl">
+                    <h4 class="text-[10px] font-black text-slate-400 mb-4 uppercase tracking-widest">Tambah Testimoni Baru</h4>
+                    <input type="text" id="tes-nama" placeholder="Contoh: Bapak Ahmad - Jakarta" class="w-full p-4 bg-slate-50 border border-slate-100 rounded-2xl text-xs mb-3 outline-none">
+                    <textarea id="tes-pesan" placeholder="Tulis ulasan klien di sini..." class="w-full p-4 bg-slate-50 border border-slate-100 rounded-2xl text-xs mb-3 outline-none" rows="3"></textarea>
+                    <button onclick="tambahTestimoni()" class="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold text-[10px] tracking-widest shadow-lg shadow-indigo-100 uppercase">Publikasikan Testimoni</button>
+                </div>
+
+                <div id="adm-testi-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // --- LOCAL DATABASE ---
+        let dbKas = JSON.parse(localStorage.getItem('zabarjad_kas')) || [
+            { tgl: '08/03', nama: 'Contoh: PT ABC (Pendirian PT)', nominal: 2500000 },
+            { tgl: '09/03', nama: 'Contoh: Ibu Ani (NPWP)', nominal: 150000 }
+        ];
+
+        let dbTesti = JSON.parse(localStorage.getItem('zabarjad_testi')) || [
+            { nama: 'Ibu Ratna - Bandung', pesan: 'Sangat cepat proses NPWP-nya. Terima kasih Zabarjad!' },
+            { nama: 'Bapak Rudi - Bogor', pesan: 'NIB dan Sertifikat Halal beres cuma dalam 2 hari. Mantap!' }
+        ];
+
+        let chart;
+
+        // --- NAVIGASI ---
+        function navigasi(id) {
+            document.getElementById('landing-page').classList.add('hidden');
+            document.getElementById('login-page').classList.add('hidden');
+            document.getElementById('admin-page').classList.add('hidden');
+            document.getElementById(id).classList.remove('hidden');
+            
+            if(id === 'landing-page') renderTestimoniPublic();
+            if(id === 'admin-page') refreshAdmin();
+            window.scrollTo(0,0);
+        }
+
+        function switchAdminTab(tab) {
+            document.getElementById('tab-finance').classList.add('hidden');
+            document.getElementById('tab-testi').classList.add('hidden');
+            document.getElementById('btn-fin').classList.replace('bg-indigo-600', 'text-slate-400');
+            document.getElementById('btn-tes').classList.replace('bg-indigo-600', 'text-slate-400');
+
+            if(tab === 'finance') {
+                document.getElementById('tab-finance').classList.remove('hidden');
+                document.getElementById('btn-fin').classList.replace('text-slate-400', 'bg-indigo-600');
+                refreshAdmin();
+            } else {
+                document.getElementById('tab-testi').classList.remove('hidden');
+                document.getElementById('btn-tes').classList.replace('text-slate-400', 'bg-indigo-600');
+                renderAdminTesti();
+            }
+        }
+
+        function prosesLogin() {
+            const u = document.getElementById('user').value;
+            const p = document.getElementById('pass').value;
+            if(u === "admin" && p === "zabarjad2026") navigasi('admin-page');
+            else alert("Username atau Password salah!");
+        }
+
+        function logoutAdmin() { navigasi('landing-page'); }
+
+        // --- FITUR TESTIMONI ---
+        function renderTestimoniPublic() {
+            const container = document.getElementById('testi-container');
+            container.innerHTML = '';
+            dbTesti.forEach(t => {
+                container.innerHTML += `
+                    <div class="testi-card bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
+                        <div class="flex text-amber-400 mb-4 text-[10px]">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-xs italic mb-4 leading-relaxed">"${t.pesan}"</p>
+                        <h5 class="font-black text-indigo-900 text-[10px] uppercase tracking-widest">— ${t.nama}</h5>
+                    </div>
+                `;
+            });
+        }
+
+        function tambahTestimoni() {
+            const nama = document.getElementById('tes-nama').value;
+            const pesan = document.getElementById('tes-pesan').value;
+            if(!nama || !pesan) return alert("Mohon isi semua kolom!");
+            
+            dbTesti.push({ nama, pesan });
+            localStorage.setItem('zabarjad_testi', JSON.stringify(dbTesti));
+            
+            document.getElementById('tes-nama').value = '';
+            document.getElementById('tes-pesan').value = '';
+            renderAdminTesti();
+            alert("Testimoni berhasil dipublikasikan!");
+        }
+
+        function renderAdminTesti() {
+            const list = document.getElementById('adm-testi-list');
+            list.innerHTML = '';
+            dbTesti.forEach((t, i) => {
+                list.innerHTML += `
+                    <div class="bg-white p-4 rounded-2xl border border-slate-100 flex justify-between items-center text-[10px]">
+                        <div class="max-w-[80%] uppercase font-bold text-slate-700">${t.nama} <span class="block font-normal normal-case italic mt-1 text-slate-400">"${t.pesan}"</span></div>
+                        <button onclick="hapusTesti(${i})" class="text-red-400 hover:text-red-600"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                `;
+            });
+        }
+
+        function hapusTesti(i) {
+            if(confirm("Hapus testimoni ini?")) {
+                dbTesti.splice(i, 1);
+                localStorage.setItem('zabarjad_testi', JSON.stringify(dbTesti));
+                renderAdminTesti();
+            }
+        }
+
+        // --- FITUR KAS & GRAFIK ---
+        function refreshAdmin() {
+            const tb = document.getElementById('tabel-admin');
+            let total = 0; tb.innerHTML = '';
+            
+            dbKas.forEach((item, i) => {
+                total += parseInt(item.nominal);
+                tb.innerHTML += `
+                    <tr class="hover:bg-slate-50 transition">
+                        <td class="p-4 text-slate-400 uppercase">${item.tgl}</td>
+                        <td class="p-4 font-bold text-slate-800 uppercase tracking-tighter">${item.nama}</td>
+                        <td class="p-4 text-indigo-600 font-bold">Rp ${parseInt(item.nominal).toLocaleString('id-ID')}</td>
+                        <td class="p-4 text-right">
+                            <button onclick="hapusKas(${i})" class="text-red-300 hover:text-red-500 transition"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                `;
+            });
+            document.getElementById('total-val').innerText = total.toLocaleString('id-ID');
+            renderChart();
+        }
+
+        function tambahPemasukan() {
+            const n = document.getElementById('adm-klien').value;
+            const m = document.getElementById('adm-nominal').value;
+            const t = new Date().toLocaleDateString('id-ID', { day: '2-digit', month: '2-digit' });
+            
+            if(!n || !m) return alert("Isi data klien & nominal!");
+            
+            dbKas.push({ tgl: t, nama: n, nominal: parseInt(m) });
+            localStorage.setItem('zabarjad_kas', JSON.stringify(dbKas));
+            
+            document.getElementById('adm-klien').value = ''; 
+            document.getElementById('adm-nominal').value = '';
+            refreshAdmin();
+        }
+
+        function hapusKas(i) {
+            if(confirm("Hapus catatan ini?")) {
+                dbKas.splice(i, 1);
+                localStorage.setItem('zabarjad_kas', JSON.stringify(dbKas));
+                refreshAdmin();
+            }
+        }
+
+        function renderChart() {
+            const ctx = document.getElementById('chartKeuangan').getContext('2d');
+            if(chart) chart.destroy();
+            
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dbKas.map(i => i.tgl).slice(-7),
+                    datasets: [{
+                        label: 'Pemasukan',
+                        data: dbKas.map(i => i.nominal).slice(-7),
+                        borderColor: '#4f46e5',
+                        tension: 0.4,
+                        fill: true,
+                        backgroundColor: 'rgba(79, 70, 229, 0.05)',
+                        borderWidth: 3,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#4f46e5'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { display: false }, x: { grid: { display: false } } }
+                }
+            });
+        }
+
+        // --- WHATSAPP FORM ---
+        function kirimWhatsApp() {
+            const n = document.getElementById('reg-nama').value;
+            const w = document.getElementById('reg-wa').value;
+            const ni = document.getElementById('reg-nik').value;
+            const k = document.getElementById('reg-kk').value;
+            const l = document.getElementById('reg-layanan').value;
+            const a = document.getElementById('reg-alamat').value;
+
+            if(!n || !w || !l) return alert("Mohon lengkapi Nama, WA, dan Layanan.");
+
+            const msg = `*ORDER BARU - ZABARJAD*%0A------------------------%0A*Nama:* ${n}%0A*WA:* ${w}%0A*NIK:* ${ni}%0A*No. KK:* ${k}%0A*Layanan:* ${l}%0A*Alamat:* ${a}%0A------------------------%0A_Saya akan kirim foto dokumen pendukung secara manual._`;
+            
+            window.open(`https://wa.me/6285793585403?text=${msg}`, '_blank');
+        }
+
+        // --- STARTUP ---
+        renderTestimoniPublic();
+    </script>
+</body>
+</html>
